@@ -1,6 +1,9 @@
 <html>
 <head>
   
+
+  
+  
 <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -21,12 +24,28 @@
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/node_modules/semantic-ui/dist/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+<script src="/node_modules/semantic-ui/dist/semantic.min.js"></script> 
+
+
 </head>
 <body>
-    <div id="root"></div>
+ <div class="ui container">
+   <div class="ui grid">
+    <div class="eight wide column" id="root" > 
+    </div>
+   </div>
+ </div>
     <script type="text/babel">
     
-
+  
+  
 class PhoneBook extends React.Component {
   constructor(props) {
     super(props);
@@ -43,32 +62,38 @@ class PhoneBook extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      
+      
+      <form   class="ui form"  onSubmit={this.handleSubmit}>
         <label>
           Telefone:
           <input type="text"  name="telefone" value={this.state.value}  />
-        </label>
+        </label>  <br></br>
         <label>
           Name:
           <input type="text"  name="name" value={this.state.value}  />
-        </label>
+        </label> <br></br>
         <label>
           LastName:
           <input type="text"  name="lastname" value={this.state.value}  />
-        </label>
+        </label> <br></br>
         
          <label>
           Company:
           <input type="text"  name="company" value={this.state.value}  />
-        </label>
+        </label> <br></br>
         
         <label>
           Email:
           <input type="text"  name="email" value={this.state.value}  />
-        </label>
+        </label> <br></br><br></br>
        
-        <input type="submit" value="Search" />
+        <button  type="submit" class="ui primary button">
+          Search
+        </button>
       </form>
+      
+      
     );
   }
 }
@@ -83,5 +108,8 @@ ReactDOM.render(
 );
     
     </script>
+    
+   
+    
 </body>
 </html>
