@@ -30,13 +30,13 @@
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="/node_modules/semantic-ui/dist/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/semantic-ui/dist/semantic.min.css">
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 
-<script src="/node_modules/semantic-ui/dist/semantic.min.js"></script> 
+<script src="/semantic-ui/dist/semantic.min.js"></script> 
 
 
 </head>
