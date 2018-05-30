@@ -13,8 +13,8 @@ class FormSearch extends React.Component {
       name: "",
       lastname: "",
       company: "",
-      email:"",
-      result: []
+      email:""
+      
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -22,6 +22,40 @@ class FormSearch extends React.Component {
   }
 
   getData(){
+      
+  var key=[];  
+  
+//   function isValidId(value) {
+//   if (typeof(value) === 'number') {
+//     // То має бути ціле число більше від нуля.
+//     return value > 0 && Math.floor(value) === value;
+//   }
+//   return false;
+// }
+
+// var validatedItems = items.filter(function(item) {
+//   return isValidId(item.id);
+// });
+
+
+      
+  for (var item in this.state) { // "foreach"
+        console.log(this.state[item]);
+       if(this.state[item]){
+         console.log("good"); 
+         key[item]=this.state[item]; 
+           
+       }
+    }      
+      
+  console.log(key);  
+      
+  for (var item in data) { // "foreach"
+        console.log(data[ item ]);
+    }    
+      
+  console.log(this.state.name)
+  
       
   ReactDOM.render(
    <NoteList  notes={data} /> ,

@@ -10,7 +10,7 @@ function Phonebook(){
                   <div className="eight wide column" id="search" >
                   <FormSearch/>
                   </div>
-                <div className="four wide column" id="result" >
+                <div className="eight wide column" id="result" >
                   ResultSearch
                   </div>
             </div>
