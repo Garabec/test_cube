@@ -51,7 +51,15 @@
  </div>
     <script type="text/babel">
     
+
+
+function Note(props) {
   
+  return <div className="" >
+           <h5> Name: {props.name} + ' '+ LastName: {props.lastname}+ ' '+ Telefone: {props.telefone}</h5>
+         </div>
+         
+  } 
   
 class PhoneBook extends React.Component {
   constructor(props) {
@@ -62,21 +70,22 @@ class PhoneBook extends React.Component {
       name: "",
       lastname: "",
       company: "",
-      email:""
+      email:"",
+      result: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.getData = this.getData.bind(this);
   }
 
 
-  handleSubmit(event) {
-    event.preventDefault();
-    
+ getData(){
+   
   var coll=db.collection("telefonebook");
   
-$("#result").empty();
+  
 
-$("form :input").each(function(){
+  $("form :input").each(function(){
   
   if($(this).val()!="")
     coll=coll.where($(this).attr('name'),"==",$(this).val())
@@ -84,21 +93,50 @@ $("form :input").each(function(){
    });
 
 
+
+var result=[];
+var i=0;
 coll.get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
+    i++;   
+    var div=document.createElement("div");
+        div.setAttribute('id', 'note'+i);
+        $("#result").append(div);
+    
         console.log(doc.id, " => ", doc.data());
         
-  ReactDOM.render(
-  <div>
-  <h1>Telefone:{doc.data().telefone}  Name:{doc.data().name}</h1>
-  </div>,
-  document.getElementById('result')
+         ReactDOM.render(
+             <h4>Telefone:{doc.data().telefone}  Name:{doc.data().name}</h4>,
+          document.getElementById('note'+i)
 );          
         
 });
+}); 
+   
+
+return result;
+   
+ }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    
+   ReactDOM.render(
+   <h4></h4>,
+   document.getElementById('result')
+);          
+  
+  console.log(this.getData())
+
+
+     
+   
+   
+
+ 
         
-        });
+        
         
         
 // ReactDOM.render(
